@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DoctorDashboard.css';
+import BASE_URL from "./config";
 
 export default function DoctorDashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -30,7 +31,7 @@ export default function DoctorDashboard() {
 
   const fetchDoctorProfile = async () => {
     try {
-      const res = await axios.get(`http://localhost:9091/doctor/${doctorId}`, {
+      const res = await axios.get(`${BASE_URL}/doctor/${doctorId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setProfileData(res.data);
@@ -39,7 +40,7 @@ export default function DoctorDashboard() {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get(`http://localhost:9091/appointment/doctor/${doctorId}`, {
+      const res = await axios.get(`${BASE_URL}/appointment/doctor/${doctorId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAppointments(res.data);
@@ -49,7 +50,7 @@ export default function DoctorDashboard() {
 
   const fetchMedicalRecords = async () => {
     try {
-      const res = await axios.get(`http://localhost:9091/report/doctor/${doctorId}`, {
+      const res = await axios.get(`${BASE_URL}/report/doctor/${doctorId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMedicalRecords(res.data);
@@ -84,12 +85,12 @@ export default function DoctorDashboard() {
     };
 
     // Post to the endpoint
-    await axios.post("http://localhost:9091/report/upload", payload, {
+    await axios.post("${BASE_URL}/report/upload", payload, {
       headers: { Authorization: `Bearer ${token}` }
     });
 
     // Update status
-    await axios.put(`http://localhost:9091/appointment/update-status/${selectedAppt.id}`, 
+    await axios.put(`${BASE_URL}/appointment/update-status/${selectedAppt.id}`, 
       { status: "Completed" }, 
       { headers: { Authorization: `Bearer ${token}` } }
     );
