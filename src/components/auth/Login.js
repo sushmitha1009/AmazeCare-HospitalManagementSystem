@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Login.css";
+import "./Login.css";
 import BASE_URL from "../config";
 
 export default function Login() {
