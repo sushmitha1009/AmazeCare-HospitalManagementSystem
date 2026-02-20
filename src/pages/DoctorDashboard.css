@@ -1,0 +1,467 @@
+/* YOUR ORIGINAL CSS - UNTOUCHED */
+.doc-dash-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+.doc-sidebar {
+  width: 280px;
+  background: #001f3f;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 3rem; color: #ffc107; }
+.doc-logo span { font-weight: normal; font-size: 0.9rem; display: block; color: white; opacity: 0.7; }
+
+.doc-sidebar nav { display: flex; flex-direction: column; gap: 10px; }
+
+.doc-sidebar nav button {
+  background: transparent; border: none; color: #cbd5e1;
+  padding: 15px; text-align: left; cursor: pointer;
+  border-radius: 12px; transition: 0.3s; font-size: 1rem;
+}
+
+.doc-sidebar nav button.active, .doc-sidebar nav button:hover {
+  background: rgba(255, 255, 255, 0.1); color: white;
+}
+
+.doc-main { flex: 1; padding: 2.5rem; }
+
+.doc-header { margin-bottom: 2rem; }
+.doc-header h1 { color: #1e293b; font-size: 2rem; }
+.doc-header p { color: #64748b; }
+
+.appointment-table-wrapper {
+  background: white; border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden;
+}
+
+.doc-table { width: 100%; border-collapse: collapse; }
+.doc-table th { background: #f8fafc; padding: 1.2rem; text-align: left; color: #475569; }
+.doc-table td { padding: 1.2rem; border-top: 1px solid #f1f5f9; }
+
+.report-action-btn {
+  background: #ffc107; border: none; padding: 8px 16px;
+  border-radius: 20px; font-weight: bold; cursor: pointer;
+}
+
+.logout-btn { margin-top: auto; color: #f87171 !important; }
+
+/* MODAL STYLES ADDED TO MATCH YOUR UI */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex; justify-content: center; align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 450px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-box textarea {
+  width: 100%;
+  height: 120px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  resize: none;
+  font-family: inherit;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Keep all your existing CSS and add these below */
+
+.profile-card-padding {
+  padding: 2.5rem;
+}
+
+.profile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-main-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.5rem;
+}
+
+.avatar-large {
+  font-size: 3rem;
+  background: #f1f5f9;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.specialty-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-box strong {
+  display: block;
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detail-box p {
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.secondary-btn:hover {
+  background: #e2e8f0;
+}
+
+/* ... Keep your existing CSS ... */
+
+/* Profile Section Styles */
+.profile-container {
+  display: flex;
+  padding: 0; /* Removing internal padding to use split layout */
+  overflow: hidden;
+}
+
+.profile-left {
+  background: #f8fafc;
+  padding: 3rem;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #f1f5f9;
+}
+
+.profile-img-placeholder {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.profile-id-tag { color: #94a3b8; font-size: 0.9rem; }
+
+.profile-right {
+  flex: 1;
+  padding: 3rem;
+  background: white;
+}
+
+.info-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.info-item { flex: 1; }
+.info-item.full-width { margin-top: 1rem; }
+
+.info-item strong {
+  display: block;
+  color: #f87171; /* Accent color for labels */
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.info-item p {
+  color: #1e293b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.specialty-badge {
+  background: #334155;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.view-btn {
+  background: #f1f5f9;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #475569;
+}
+/* ... Keep your existing dashboard CSS ... */
+
+.profile-container {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-left {
+  background: #f8fafc;
+  padding: 3rem;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #f1f5f9;
+}
+
+.designation-text {
+  color: #64748b;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.profile-img-placeholder {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.profile-right {
+  flex: 1;
+  padding: 3rem;
+}
+
+.info-item strong {
+  display: block;
+  color: #f87171; /* Coral/Red accent from your reference */
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.specialty-badge {
+  background: #334155;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.fee-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f87171;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.profile-container { position: relative; } /* Needed for absolute fee badge */
+
+.designation-text {
+  color: #64748b;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.diagnosis-pill {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fee-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ffc107;
+  color: #001f3f;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-container {
+  position: relative; /* Necessary for the fee-badge */
+  display: flex;
+}
+
+.designation-text {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* --- ADDITIONAL ENHANCEMENTS FOR THE FLOW --- */
+
+/* Status Tags for Appointments */
+.status-tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-tag.pending {
+  background: #fef3c7;
+  color: #92400e; /* Amber for pending */
+}
+
+.status-tag.completed {
+  background: #dcfce7;
+  color: #166534; /* Green for completed */
+}
+
+/* Empty State Styling */
+.no-data-container {
+  text-align: center;
+  padding: 4rem;
+  color: #94a3b8;
+}
+
+.no-data-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Diagnosis Pill refinement for Patient Records */
+.diagnosis-pill {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal form label alignment */
+.modal-box .input-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #f87171; /* Your Coral Accent */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Fix for the right-side alignment issue */
+.modal-box {
+  background: white;
+  padding: 2.5rem; /* Increased padding for better spacing */
+  border-radius: 20px;
+  width: 500px; /* Slightly wider for a professional look */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column; /* Forces vertical stacking */
+}
+
+.modal-input-group {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Ensures label is above the input */
+  align-items: flex-start; /* Aligns everything to the left */
+}
+
+.modal-input, 
+.modal-box textarea {
+  width: 100% !important; /* Forces full width within the box */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  margin: 0.5rem 0 0 0; /* Resets margins that might cause offset */
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  font-family: inherit;
+}
+
+.modal-box textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* Label styling to match your coral accent */
+.label-style {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #f87171;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

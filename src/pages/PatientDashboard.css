@@ -1,0 +1,39 @@
+/* Container Layout */
+.patient-dash { display: flex; height: 100vh; background: #f4f7f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* Sidebar Navigation */
+.side-nav { width: 250px; background: #002b5b; color: white; display: flex; flex-direction: column; padding: 20px; }
+.logo { font-size: 24px; font-weight: bold; margin-bottom: 40px; color: #00d4ff; text-align: center; }
+.side-nav button { background: none; border: none; color: #b0c4de; padding: 15px; text-align: left; cursor: pointer; font-size: 16px; transition: 0.3s; border-radius: 8px; margin-bottom: 5px; }
+.side-nav button:hover, .side-nav button.active { background: #004080; color: white; }
+.side-nav .logout { margin-top: auto; color: #ff6b6b; }
+
+/* Main Content Area */
+.content-area { flex: 1; padding: 30px; overflow-y: auto; }
+.top-bar { font-size: 22px; font-weight: 600; color: #333; margin-bottom: 30px; padding-bottom: 10px; border-bottom: 2px solid #ddd; }
+.tab-content { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+/* Profile Grid */
+.profile-header { text-align: center; margin-bottom: 30px; }
+.avatar { font-size: 50px; background: #e3f2fd; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 10px; }
+.id-badge { background: #007bff; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+.profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-item.full { grid-column: span 2; border-top: 1px solid #eee; padding-top: 15px; }
+.history-text { background: #fafafa; padding: 10px; border-radius: 5px; border-left: 4px solid #007bff; }
+
+/* Table Styling */
+.hms-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.hms-table th { text-align: left; background: #f8f9fa; padding: 12px; border-bottom: 2px solid #dee2e6; }
+.hms-table td { padding: 12px; border-bottom: 1px solid #eee; }
+.diagnosis-cell { font-style: italic; color: #555; font-size: 14px; }
+
+/* Status Pills */
+.status { padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+.status.scheduled { background: #fff3cd; color: #856404; }
+.status.completed { background: #d4edda; color: #155724; }
+
+/* Form Elements */
+.booking-form { display: flex; flex-direction: column; max-width: 500px; gap: 15px; }
+.booking-form select, .booking-form input, .booking-form textarea { padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
+.btn-submit { background: #007bff; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; }
+.btn-small { background: #6c757d; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }

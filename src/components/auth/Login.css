@@ -1,0 +1,176 @@
+/* --- MAIN CONTAINER & CARD --- */
+.hms-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eef2f6;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hms-card {
+  display: flex;
+  width: 900px; /* Slightly wider for better proportions */
+  height: 580px; 
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  overflow: hidden; 
+}
+
+/* --- LEFT SIDE --- */
+.hms-left {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f1f5f9;
+}
+
+.illustration-area img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 15px;
+}
+
+/* --- RIGHT SIDE (The Yellow Box) --- */
+.hms-right {
+  flex: 1.1;
+  background-color: #ffc107; 
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  /* FIXED: Scrollable area for long forms */
+  overflow-y: auto; 
+}
+
+/* Custom scrollbar for a cleaner look */
+.hms-right::-webkit-scrollbar {
+  width: 6px;
+}
+.hms-right::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 340px; 
+  margin: auto 0; /* Keeps form centered vertically when not scrolling */
+}
+
+.login-box h2 {
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* --- THE UNIFIED PILL DESIGN --- */
+.role-dropdown select,
+.input-wrapper,
+.hms-input,
+.btn-primary {
+  width: 100% !important;
+  height: 48px;           /* Standardized height */
+  border-radius: 25px;    /* Perfect Pill Shape */
+  margin-bottom: 12px;    /* Consistent spacing */
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Backgrounds for Inputs/Dropdowns */
+.role-dropdown select,
+.input-wrapper,
+.hms-input {
+  background-color: white !important;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Inner Input Fix (for Login Page Icons) */
+.input-wrapper input {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* For Signup page inputs that don't use wrappers */
+input.hms-input {
+  display: block;
+}
+
+.input-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #64748b;
+}
+
+/* --- BUTTON STYLING --- */
+.btn-primary {
+  background-color: #001f3f; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 31, 63, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #002d5c;
+  transform: translateY(-1px);
+}
+
+/* --- FOOTER & NAV --- */
+.hms-bottom-nav { margin-top: 20px; }
+
+.nav-link-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.signup-footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.link-text {
+  color: #001f3f;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.error-text {
+  color: #ff0000 !important; /* Force red */
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+  display: block;
+  font-weight: bold;
+}
