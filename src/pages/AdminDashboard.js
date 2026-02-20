@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./AdminDashboard.css";
+import BASE_URL from "./config";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("doctors");
@@ -33,9 +34,9 @@ export default function AdminDashboard() {
     setLoading(true);
     const token = localStorage.getItem("token");
     let url = "";
-    if (activeTab === "doctors") url = "http://localhost:9091/doctor/all";
-    if (activeTab === "patients") url = "http://localhost:9091/patient/all";
-    if (activeTab === "admins") url = "http://localhost:9091/admin/all";
+    if (activeTab === "doctors") url = "${BASE_URL}/doctor/all";
+    if (activeTab === "patients") url = "${BASE_URL}/patient/all";
+    if (activeTab === "admins") url = "${BASE_URL}/admin/all";
 
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
       .then((res) => {
@@ -85,7 +86,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     const token = localStorage.getItem("token");
     const payload = { ...newDoctor, experienceYears: parseInt(newDoctor.experienceYears) || 0 };
-    const url = isEditMode ? `http://localhost:9091/doctor/update/${editId}` : "http://localhost:9091/admin/add-doctor";
+    const url = isEditMode ? `${BASE_URL}/doctor/update/${editId}` : "${BASE_URL}/admin/add-doctor";
     const request = isEditMode ? axios.put(url, payload, { headers: { Authorization: `Bearer ${token}` } }) : axios.post(url, payload, { headers: { Authorization: `Bearer ${token}` } });
 
     request.then(() => {
@@ -98,7 +99,7 @@ export default function AdminDashboard() {
   const handleSavePatient = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    const url = isEditMode ? `http://localhost:9091/patient/update/${editId}` : "http://localhost:9091/admin/add-patient";
+    const url = isEditMode ? `${BASE_URL}/patient/update/${editId}` : "${BASE_URL}/admin/add-patient";
     const request = isEditMode ? axios.put(url, newPatient, { headers: { Authorization: `Bearer ${token}` } }) : axios.post(url, newPatient, { headers: { Authorization: `Bearer ${token}` } });
 
     request.then(() => {
@@ -111,7 +112,7 @@ export default function AdminDashboard() {
   const handleDelete = (id) => {
     if (window.confirm("Confirm delete?")) {
       const token = localStorage.getItem("token");
-      let deleteUrl = `http://localhost:9091/${activeTab.slice(0, -1)}/delete/${id}`;
+      let deleteUrl = `${BASE_URL}/${activeTab.slice(0, -1)}/delete/${id}`;
       axios.delete(deleteUrl, { headers: { Authorization: `Bearer ${token}` } }).then(() => fetchData());
     }
   };
