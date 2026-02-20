@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./AdminDashboard.css";
-import BASE_URL from "../config";
+import BASE_URL from "../../config";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("doctors");
