@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PatientDashboard.css';
-import BASE_URL from "../../config";
+import BASE_URL from "../config";
 
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState('profile');
