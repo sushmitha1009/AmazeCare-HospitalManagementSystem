@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
+import BASE_URL from "./config";
 
 export default function Signup() {
   const location = useLocation();
@@ -66,7 +67,7 @@ export default function Signup() {
         return;
     }
 
-    let url = `http://localhost:9091/${role}/add`;
+    let url = `${BASE_URL}/${role}/add`;
     let payload = {};
 
     if (role === "admin") {
