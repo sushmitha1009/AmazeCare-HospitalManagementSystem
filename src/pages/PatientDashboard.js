@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PatientDashboard.css';
+import BASE_URL from "./config";
 
 export default function PatientDashboard() {
   const [activeTab, setActiveTab] = useState('profile');
@@ -31,10 +32,10 @@ export default function PatientDashboard() {
     setLoading(true);
     try {
       const [pRes, aRes, rRes, dRes] = await Promise.all([
-        axios.get(`http://localhost:9091/patient/${patientId}`, config),
-        axios.get(`http://localhost:9091/appointment/patient/${patientId}`, config),
-        axios.get(`http://localhost:9091/report/get/patient/${patientId}`, config),
-        axios.get(`http://localhost:9091/doctor/all`, config)
+        axios.get(`${BASE_URL}/patient/${patientId}`, config),
+        axios.get(`${BASE_URL}/appointment/patient/${patientId}`, config),
+        axios.get(`${BASE_URL}/report/get/patient/${patientId}`, config),
+        axios.get(`${BASE_URL}/doctor/all`, config)
       ]);
 
       setProfile(pRes.data);
@@ -67,7 +68,7 @@ export default function PatientDashboard() {
   console.log("Final Payload being sent:", payload); // Check this in F12 Console!
 
   try {
-    await axios.post("http://localhost:9091/appointment/book", payload, config);
+    await axios.post("${BASE_URL}/appointment/book", payload, config);
     alert("Appointment Booked!");
     setBookingData({ doctorId: "", reason: "", date: "" });
     fetchAllData(); 
