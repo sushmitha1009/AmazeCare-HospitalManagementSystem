@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import BASE_URL from "./config";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export default function Login() {
 
   const handleLogin = () => {
     axios
-      .post(`http://localhost:9091/auth/login/${role}`, { email, password })
+      .post(`${BASE_URL}/auth/login/${role}`, { email, password })
       .then((res) => {
         const data = res.data;
         
